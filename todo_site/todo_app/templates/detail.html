@@ -5,8 +5,19 @@
 <h2>Task</h2>
 <form method="POST">
     {% csrf_token %}
-    {{ form }}
+    {{ task_form }}
     <input type="submit" name="update" value="Update">
     <input type="submit" name="delete" value="Delete">
 </form>
+<h3>Comments:</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit" name="add" value="Add">
+</form>
+<ul>
+    {% for c in comments %}
+        <li>{{ c.body }}</li>
+    {% endfor %}
+</ul>
 {% endblock content %}

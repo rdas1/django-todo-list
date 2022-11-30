@@ -1,1 +1,2 @@
-/venv
+venv/
+todo_site/db.sqlite3
